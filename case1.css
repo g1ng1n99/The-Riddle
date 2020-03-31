@@ -38,8 +38,8 @@ h1{font-size: xx-large;
 }
 
 #footer{
-    text-align: right;
-    position: relative;
+    text-align: center;
+    position: center;
     height: 100px;
     color: rgb(0, 217, 255);
     margin-top: -100px;
