@@ -1,6 +1,6 @@
 /* CSS Document */
 body {background-color: black;}
-h1 {font-size: xx-large;
+h1{font-size: xx-large;
     color: red;
     
     text-align: center;
@@ -41,7 +41,7 @@ h1 {font-size: xx-large;
     text-align: center;
     position: center;
     height: 100px;
-    color:rgb(0, 217, 255);
+    color: rgb(0, 217, 255);
     margin-top: -100px;
     clear: both;
     
