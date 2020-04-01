@@ -1,10 +1,12 @@
 /* CSS Document */
+
 @font-face {
-    font-family: 'youmurder';
-    src: url('youmurdererbb_reg-webfont.woff2') format('woff2'),
-         url('youmurdererbb_reg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'shlopshlop';
+  src: url('Font/shlop-webfont.woff2') format('woff2'),
+       url('Font/shlop-webfont.woff') format('woff'),
+       url('Font/SHLOP');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -13,8 +15,8 @@ body {
 }
 
 h1 {
-  font-size: xx-large;
-  font-family: youmurder;
+  font-size: 80px;
+  font-family: 'shlopshlop', arial;
   color: red;
   text-align: center;
 }
