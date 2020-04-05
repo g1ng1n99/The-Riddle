@@ -131,7 +131,7 @@ class Riddle {
         return card.getElementsByClassName('card-value')[0].src;
     }
     canFlipCard(card) {
-        return !this.busy && !this.matchCards.includes(card) && card !== this.cardToCheck
+        return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck
     }
 }
 
