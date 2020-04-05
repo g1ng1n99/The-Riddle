@@ -11,8 +11,8 @@
 
 
 body {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 
@@ -35,7 +35,7 @@ h1 {
 
 .game-info {
     font-family: 'Franklin Gothic Medium', serif;
-    color: black;
+    color: white;
     font-size: 2em;
 }
 
