@@ -31,7 +31,7 @@ class AudioController {
     }
 }
 class Riddle {
-    constructor(totalTime, cards){
+    constructor(totalTime, cards) {
         this.cardsArray = cards;
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
@@ -48,7 +48,7 @@ class Riddle {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.shuffleCards(this.cardsArray);
+            this.cardsArray.shuffleCards;
             this.countdown = this.startCountDown();
             this.busy = false;
         }, 500)
