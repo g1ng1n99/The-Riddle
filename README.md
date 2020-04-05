@@ -1,3 +1,9 @@
 # The-Riddle
-choose your detective to solve the case
-Match the object pairs to solve the case
+
+Final Project CFG
+This is our final project as part of the Code First Girls course.
+It is an introduction into HTML, CSS and Javascript.
+
+Hope you all like it.
+
+Emma & Zio.
