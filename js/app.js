@@ -30,6 +30,7 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
+
 class Riddle {
     constructor(totalTime, cards) {
         this.cardsArray = cards;
@@ -44,7 +45,7 @@ class Riddle {
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
         this.cardToCheck = null;
-        this.matchCards = [];
+        this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
@@ -88,7 +89,7 @@ class Riddle {
             card.cardList.add('visible');
 
             if(this.cardToCheck) {
-                this.cardForCardMatch(card);
+                this.checkForCardMatch(card);
              } else {
                 this.cardToCheck = card;
              }
