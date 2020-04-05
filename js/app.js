@@ -39,7 +39,7 @@ class Riddle {
         this.ticker = document.getElementById('flips');
         this.audioController = new AudioController();
     }
-​
+
     startGame() {
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
