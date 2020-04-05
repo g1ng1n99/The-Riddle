@@ -30,8 +30,7 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
-​
- class Riddle {
+class Riddle {
     constructor(totalTime, cards){
         this.cardsArray = cards;
         this.totalTime = totalTime;
@@ -40,7 +39,7 @@ class AudioController {
         this.ticker = document.getElementById('flips');
         this.audioController = new AudioController();
     }
-​
+
     startGame() {
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
@@ -87,7 +86,7 @@ class AudioController {
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
             card.cardList.add('visible');
-​
+
             if(this.cardToCheck) {
                 this.cardForCardMatch(card);
              } else {
@@ -100,7 +99,7 @@ class AudioController {
             this.cardMatch(card, this.cardToCheck);
         else
             this.cardMisMatch(card, this.cardToCheck);
-​
+
         this.cardToCheck = null;
     }
     cardMatch(card1, card2) {
@@ -134,13 +133,13 @@ class AudioController {
         return !this.busy && !this.matchCards.includes(card) && card !== this.cardToCheck
     }
 }
-​
+
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 } else {
     ready();
 }
-​
+
 function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
@@ -152,7 +151,7 @@ function ready() {
             game.startGame();
         });
     });
-​
+
     cards.forEach(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
