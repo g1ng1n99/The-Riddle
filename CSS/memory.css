@@ -92,6 +92,7 @@ h1 {
     align-items: center;
     z-index: 100;
     color: darkred;
+    cursor: pointer;
     font-family: 'Franklin Gothic Medium', serif;
 }
 
@@ -102,7 +103,7 @@ h1 {
 .overlay-text.visible {
     display: flex;
     flex-direction: column;
-    animation: overlay-grow 500ms forwards;
+    animation: overlay-grow 1s forwards;
 }
 
 @keyframes overlay-grow {
@@ -112,7 +113,7 @@ h1 {
     }
     to {
         background-color: rgba(0, 0, 0, .8);
-        font-size: 10em;
+        font-size: 5em;
     }
 }
 
