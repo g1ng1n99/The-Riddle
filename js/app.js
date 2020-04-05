@@ -86,7 +86,7 @@ class Riddle {
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
             card.cardList.add('visible');
-​
+
             if(this.cardToCheck) {
                 this.cardForCardMatch(card);
              } else {
