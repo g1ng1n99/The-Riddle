@@ -40,10 +40,10 @@ h1 {
 }
 
 .game-container {
+    margin: 50px auto;
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
-    margin: 50px;
     justify-content: center;
     perspective: 500px;
 }
@@ -69,7 +69,7 @@ h1 {
     transition: transform 500ms ease-in-out;
 }
 
-.card:hover .card-back {
+.card.visble .card-back {
     transform: rotateY(-180deg);
 }
 
@@ -77,7 +77,7 @@ h1 {
     transform: rotateY(0);
 }
 
-.card.matched .card-value {
+.card.matched .card-front .card-value {
     animation: dance 1s linear infinite 500ms;
 }
 
@@ -132,6 +132,7 @@ h1 {
 .card-back {
     background-color: black;
     border-color: red;
+    transform: rotateY(0);
 }
 
 .card-front {
@@ -146,7 +147,7 @@ h1 {
 }
 
 .card-front:hover .card-value {
-    transform: scale(1);
+   transform: scale(1);
 }
 
 .blood-splatter {
