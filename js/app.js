@@ -88,7 +88,7 @@ class Riddle {
             card.cardList.add('visible');
 
             if(this.cardToCheck) {
-                this.cardForCardMatch(card);
+                this.checkForCardMatch(card);
              } else {
                 this.cardToCheck = card;
              }
