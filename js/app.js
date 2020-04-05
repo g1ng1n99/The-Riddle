@@ -99,7 +99,7 @@ class Riddle {
             this.cardMatch(card, this.cardToCheck);
         else
             this.cardMisMatch(card, this.cardToCheck);
-​
+
         this.cardToCheck = null;
     }
     cardMatch(card1, card2) {
@@ -151,7 +151,7 @@ function ready() {
             game.startGame();
         });
     });
-​
+
     cards.forEach(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
