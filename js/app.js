@@ -1,5 +1,3 @@
-
-
 class AudioController {
     constructor() {
         this.bgMusic = new Audio('../sound/crimescene.mp3');
@@ -20,21 +18,20 @@ class AudioController {
     flip() {
         this.flipSound.play();
     }
-    match(){
+    match() {
         this.matchSound.play();
     }
-    casesolved(){
+    casesolved() {
         this.stopMusic();
         this.victorySound.play();
     }
-    gameover(){
+    gameover() {
         this.stopMusic();
         this.gameOverSound.play();
     }
 }
 ​
- 
-class Riddle {
+ class Riddle {
     constructor(totalTime, cards){
         this.cardsArray = cards;
         this.totalTime = totalTime;
@@ -138,13 +135,13 @@ class Riddle {
     }
 }
 ​
-if (document.readyState == 'loading'){
+if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready);
 } else {
     ready();
 }
 ​
-    function ready(){
+function ready() {
     let overlays = Array.from(document.getElementsByClassName('overlay-text'));
     let cards = Array.from(document.getElementsByClassName('card'));
     let game = new Riddle(100, cards);
