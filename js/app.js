@@ -44,7 +44,7 @@ class Riddle {
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
         this.cardToCheck = null;
-        this.matchCards = [];
+        this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
