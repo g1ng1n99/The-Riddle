@@ -30,6 +30,7 @@ class AudioController {
         this.gameOverSound.play();
     }
 }
+
 class Riddle {
     constructor(totalTime, cards){
         this.cardsArray = cards;
