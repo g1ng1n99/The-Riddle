@@ -1,4 +1,4 @@
-class AudioController {
+ class AudioController {
     constructor() {
         this.bgMusic = new Audio('../sound/crimescene.mp3');
         this.flipSound = new Audio('../sound/flip.mp3');
