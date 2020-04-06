@@ -21,9 +21,9 @@
     match() {
         this.matchSound.play();
     }
-    casesolved() {
+    caseSolved() {
         this.stopMusic();
-        this.victorySound.play();
+        this.caseSolvedSound.play();
     }
     gameover() {
         this.stopMusic();
@@ -49,8 +49,8 @@ class Riddle {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.cardsArray.shuffleCards;
-            this.countdown = this.startCountDown();
+            this.shuffleCards(this.cardsArray);
+            this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
             this.hideCards();
@@ -66,13 +66,13 @@ class Riddle {
         }, 1000);
     }
     gameOver() {
-        clearInterval(this.countdown);
+        clearInterval(this.countDown);
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
-    casesolved() {
-        clearInterval(this.countdown);
-        this.audioController.victory();
+    caseSolved() {
+        clearInterval(this.countDown);
+        this.audioController.caseSolved();
         document.getElementById('case-solved-text').classList.add('visible');
     }
     hideCards() {
@@ -110,7 +110,7 @@ class Riddle {
         card2.classList.add('matched');
         this.audioController.match();
         if(this.matchedCards.length === this.cardsArray.length)
-            this.victory();
+            this.casesolved();
     }
     cardMisMatch(card1, card2) {
         this.busy = true;
