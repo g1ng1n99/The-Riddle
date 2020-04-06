@@ -49,7 +49,7 @@ class Riddle {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.cardArray.shuffleCards();
+            this.shuffleCards(this.cardsArray);
             this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
