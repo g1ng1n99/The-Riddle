@@ -21,9 +21,9 @@ class AudioController {
     match() {
         this.matchSound.play();
     }
-    casesolved() {
+    caseSolved() {
         this.stopMusic();
-        this.victorySound.play();
+        this.caseSolvedSound.play();
     }
     gameover() {
         this.stopMusic();
@@ -49,7 +49,7 @@ class Riddle {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.shuffleCards();
+            this.cardArray.shuffleCards();
             this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
@@ -70,9 +70,9 @@ class Riddle {
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
-    casesolved() {
+    caseSolved() {
         clearInterval(this.countDown);
-        this.audioController.victory();
+        this.audioController.caseSolved();
         document.getElementById('case-solved-text').classList.add('visible');
     }
     hideCards() {
