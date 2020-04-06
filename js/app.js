@@ -110,7 +110,7 @@ class Riddle {
         card2.classList.add('matched');
         this.audioController.match();
         if(this.matchedCards.length === this.cardsArray.length)
-            this.casesolved();
+            this.caseSolved();
     }
     cardMisMatch(card1, card2) {
         this.busy = true;
