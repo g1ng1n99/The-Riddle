@@ -49,8 +49,8 @@ class Riddle {
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
-            this.cardsArray.shuffleCards;
-            this.countdown = this.startCountDown();
+            this.shuffleCards();
+            this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
             this.hideCards();
@@ -66,12 +66,12 @@ class Riddle {
         }, 1000);
     }
     gameOver() {
-        clearInterval(this.countdown);
+        clearInterval(this.countDown);
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
     casesolved() {
-        clearInterval(this.countdown);
+        clearInterval(this.countDown);
         this.audioController.victory();
         document.getElementById('case-solved-text').classList.add('visible');
     }
