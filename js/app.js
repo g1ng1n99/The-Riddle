@@ -25,7 +25,7 @@
         this.stopMusic();
         this.caseSolvedSound.play();
     }
-    gameover() {
+    gameOver() {
         this.stopMusic();
         this.gameOverSound.play();
     }
