@@ -3,7 +3,7 @@
         this.bgMusic = new Audio('../sound/crimescene.mp3');
         this.flipSound = new Audio('../sound/flip.mp3');
         this.matchSound = new Audio('../sound/match.wav');
-        this.victorySound = new Audio('../sound/victory.mp3');
+        this.caseSolvedSound = new Audio('../sound/victory.mp3');
         this.gameOverSound = new Audio('../sound/gameover.mp3');
         this.bgMusic.Volume = 0.5;
         this.bgMusic.loop = true;
