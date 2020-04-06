@@ -123,8 +123,8 @@ class Riddle {
     shuffleCards() { 
         for (let i = this.cardsArray.length -1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
-            cardsArray[randIndex].style.order = i;
-            cardsArray[i].sytle.order = randIndex;
+            this.cardsArray[randIndex].style.order = i;
+            this.cardsArray[i].sytle.order = randIndex;
         }
     }
     getCardType(card) {
