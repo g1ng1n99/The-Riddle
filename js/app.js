@@ -1,9 +1,9 @@
-class AudioController {
+ class AudioController {
     constructor() {
         this.bgMusic = new Audio('../sound/crimescene.mp3');
         this.flipSound = new Audio('../sound/flip.mp3');
         this.matchSound = new Audio('../sound/match.wav');
-        this.victorySound = new Audio('../sound/victory.mp3');
+        this.caseSolvedSound = new Audio('../sound/victory.mp3');
         this.gameOverSound = new Audio('../sound/gameover.mp3');
         this.bgMusic.Volume = 0.5;
         this.bgMusic.loop = true;
@@ -21,17 +21,18 @@ class AudioController {
     match() {
         this.matchSound.play();
     }
-    casesolved() {
+    caseSolved() {
         this.stopMusic();
-        this.victorySound.play();
+        this.caseSolvedSound.play();
     }
-    gameover() {
+    gameOver() {
         this.stopMusic();
         this.gameOverSound.play();
     }
 }
+
 class Riddle {
-    constructor(totalTime, cards){
+    constructor(totalTime, cards) {
         this.cardsArray = cards;
         this.totalTime = totalTime;
         this.timeRemaining = totalTime;
@@ -44,12 +45,12 @@ class Riddle {
         this.totalClicks = 0;
         this.timeRemaining = this.totalTime;
         this.cardToCheck = null;
-        this.matchCards = [];
+        this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
             this.audioController.startMusic();
             this.shuffleCards(this.cardsArray);
-            this.countdown = this.startCountDown();
+            this.countDown = this.startCountDown();
             this.busy = false;
         }, 500)
             this.hideCards();
@@ -65,13 +66,13 @@ class Riddle {
         }, 1000);
     }
     gameOver() {
-        clearInterval(this.countdown);
+        clearInterval(this.countDown);
         this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
-    casesolved() {
-        clearInterval(this.countdown);
-        this.audioController.victory();
+    caseSolved() {
+        clearInterval(this.countDown);
+        this.audioController.caseSolved();
         document.getElementById('case-solved-text').classList.add('visible');
     }
     hideCards() {
@@ -85,10 +86,10 @@ class Riddle {
             this.audioController.flip();
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
-            card.cardList.add('visible');
+            card.classList.add('visible');
 
             if(this.cardToCheck) {
-                this.cardForCardMatch(card);
+                this.checkForCardMatch(card);
              } else {
                 this.cardToCheck = card;
              }
@@ -109,7 +110,7 @@ class Riddle {
         card2.classList.add('matched');
         this.audioController.match();
         if(this.matchedCards.length === this.cardsArray.length)
-            this.victory();
+            this.caseSolved();
     }
     cardMisMatch(card1, card2) {
         this.busy = true;
@@ -119,23 +120,23 @@ class Riddle {
             this.busy = false;
         }, 1000);
     }
-    shuffleCards(cardsArray) { //Fisher-Yates Shuffle Algorithm
-        for (let i = cardsArray.length -1; i > 0; i--) {
+    shuffleCards() { 
+        for (let i = this.cardsArray.length -1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
-            cardsArray[randIndex].style.order = i;
-            cardsArray[i].sytle.order = randIndex;
+            this.cardsArray[randIndex].style.order = i;
+            this.cardsArray[i].sytle.order = randIndex;
         }
     }
     getCardType(card) {
         return card.getElementsByClassName('card-value')[0].src;
     }
     canFlipCard(card) {
-        return !this.busy && !this.matchCards.includes(card) && card !== this.cardToCheck
+        return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
     }
 }
 
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', ready());
 } else {
     ready();
 }
@@ -155,6 +156,6 @@ function ready() {
     cards.forEach(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
-            });
+        });
     });
 }
