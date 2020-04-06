@@ -156,6 +156,6 @@ function ready() {
     cards.forEach(card => {
             card.addEventListener('click', () => {
             game.flipCard(card);
-            });
+        });
     });
 }
