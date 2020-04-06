@@ -9,10 +9,13 @@
     font-style: normal;
   }
 
-
 body {
-    margin: 0
+    background-image: url("../img/horror.jpg");
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
     color: white;
 }
 
