@@ -93,7 +93,7 @@ h1 {
     z-index: 100;
     color: darkred;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', serif;
+    font-family: 'shlopshlop', 'Franklin Gothic Medium';
 }
 
 .overlay-text-small {
