@@ -86,7 +86,7 @@ class Riddle {
             this.audioController.flip();
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
-            card.cardList.add('visible');
+            card.classList.add('visible');
 
             if(this.cardToCheck) {
                 this.checkForCardMatch(card);
@@ -120,8 +120,8 @@ class Riddle {
             this.busy = false;
         }, 1000);
     }
-    shuffleCards(cardsArray) { 
-        for (let i = cardsArray.length -1; i > 0; i--) {
+    shuffleCards() { 
+        for (let i = this.cardsArray.length -1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
             cardsArray[randIndex].style.order = i;
             cardsArray[i].sytle.order = randIndex;
