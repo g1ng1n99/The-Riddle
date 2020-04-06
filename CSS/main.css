@@ -10,6 +10,12 @@
 }
 
 body {
+  background-image: url("../img/scene.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: auto;
   background-color: black;
   color: white;
   font-family: 'Franklin Gothic Medium';
@@ -35,7 +41,6 @@ h3{
 }
 
 .instructions{
-  background-color: black;
   color: red;
   font-family: 'Franklin Gothic Medium', 'arial';
   text-align: center;

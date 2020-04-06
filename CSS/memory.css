@@ -9,10 +9,13 @@
     font-style: normal;
   }
 
-
 body {
-    margin: 0
+    background-image: url("../img/horror.jpg");
     background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: auto;
     color: white;
 }
 
@@ -21,6 +24,7 @@ body {
     font-size: 6em;
     font-family: 'shlopshlop', 'arial';
     color: red;
+    text-shadow: 2px 2px 4px #000000;
     text-align: center;
 }
  
@@ -94,7 +98,7 @@ body {
     z-index: 100;
     color: darkred;
     cursor: pointer;
-    font-family: 'Franklin Gothic Medium', serif;
+    font-family: 'shlopshlop', 'Franklin Gothic Medium';
 }
 
 .overlay-text-small {

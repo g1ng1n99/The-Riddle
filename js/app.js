@@ -1,7 +1,7 @@
  class AudioController {
     constructor() {
         this.bgMusic = new Audio('../sound/crimescene.mp3');
-        this.flipSound = new Audio('../sound/flip.mp3');
+        this.flipSound = new Audio('../sound/Flip.mp3');
         this.matchSound = new Audio('../sound/match.wav');
         this.caseSolvedSound = new Audio('../sound/victory.mp3');
         this.gameOverSound = new Audio('../sound/gameover.mp3');
@@ -124,7 +124,7 @@ class Riddle {
         for (let i = this.cardsArray.length -1; i > 0; i--) {
             let randIndex = Math.floor(Math.random() * (i + 1));
             this.cardsArray[randIndex].style.order = i;
-            this.cardsArray[i].sytle.order = randIndex;
+            this.cardsArray[i].style.order = randIndex;
         }
     }
     getCardType(card) {
